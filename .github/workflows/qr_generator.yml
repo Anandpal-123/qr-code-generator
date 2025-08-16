@@ -3,7 +3,7 @@ run-name: "QR Code Generation"
 
 on:
   push:
-    branches: [ qr_code ]
+    branches: [ main ]
 
 jobs:
   generate_qr_code:
