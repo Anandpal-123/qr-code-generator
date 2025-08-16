@@ -33,7 +33,7 @@ If you want to test locally:
 ```bash
 # Clone this repository
 git clone https://github.com/your-username/qr-code-generator.git
-cd contact-qr-code-generator
+cd qr-code-generator
 
 # Install dependencies
 pip install qrcode[pil]
