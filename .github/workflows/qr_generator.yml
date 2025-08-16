@@ -1,0 +1,31 @@
+name: 🧾 QR Code Generator
+run-name: "QR Code Generation"
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  generate_qr_code:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📦 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: 📥 Install Dependencies
+      run: pip install qrcode[pil]
+
+    - name: 🛠️ Run QR Code Generator
+      run: python generate_qr.py
+
+    - name: 📤 Upload QR Code Image as Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: contact_qr_codes
+        path: contact_*.png
